@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Database, Plus, Trash2, Minus } from "lucide-react";
 import type { Drive } from "../types";
 
-const COMMON_DRIVE_SIZES = [4, 8, 12, 14, 16, 18, 20, 22];
+const COMMON_DRIVE_SIZES = [4, 8, 12, 14, 16, 18, 20, 22, 24];
 
 type DriveControlsProps = {
   drives: Drive[];
