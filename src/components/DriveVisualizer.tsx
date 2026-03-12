@@ -32,7 +32,7 @@ export function DriveVisualizer({
           </p>
         </div>
       ) : (
-        <div className="flex-1 overflow-x-auto pb-4 pt-10">
+        <div className="flex-1 overflow-x-auto overflow-y-hidden pb-4 pt-10">
           <div className="flex items-end gap-4 min-w-max h-72 px-2">
             <AnimatePresence mode="popLayout">
               {stats.sortedDrives.map((drive: Drive, index: number) => {
