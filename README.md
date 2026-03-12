@@ -2,6 +2,10 @@
 
 A simple, interactive front-end web application to visualize and plan your Unraid server storage array. 
 
+[![CI](https://github.com/NathanGrenier/Unraid-Drive-Visualizer/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/NathanGrenier/Unraid-Drive-Visualizer/actions/workflows/ci.yaml)
+
+[![Deploy to GitHub Pages](https://github.com/NathanGrenier/Unraid-Drive-Visualizer/actions/workflows/deploy.yaml/badge.svg?branch=main)](https://github.com/NathanGrenier/Unraid-Drive-Visualizer/actions/workflows/deploy.yaml)
+
 ## Features
 
 - **Visual Array Builder:** Add, remove, and visualize drives in real-time.
