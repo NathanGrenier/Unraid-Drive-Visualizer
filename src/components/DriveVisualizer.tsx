@@ -27,7 +27,9 @@ export function DriveVisualizer({
       {drivesLength === 0 ? (
         <div className="flex-1 flex flex-col items-center justify-center text-gray-500 border-2 border-dashed border-white/5 rounded-xl">
           <HardDrive className="w-12 h-12 mb-3 opacity-20" />
-          <p>Add drives to see your array configuration</p>
+          <p className="text-center px-4">
+            Add drives to see your array configuration
+          </p>
         </div>
       ) : (
         <div className="flex-1 overflow-x-auto pb-4 pt-10">
@@ -103,7 +105,7 @@ export function DriveVisualizer({
 
                     <button
                       onClick={() => onRemoveDrive(drive.id)}
-                      className="absolute -top-8 z-20 opacity-0 group-hover:opacity-100 p-1.5 bg-red-500/20 text-red-400 hover:bg-red-500 hover:text-white rounded-full transition-all"
+                      className="absolute -top-8 z-20 opacity-100 md:opacity-0 md:group-hover:opacity-100 p-1.5 bg-red-500/20 text-red-400 hover:bg-red-500 hover:text-white rounded-full transition-all"
                       title="Remove Drive"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
