@@ -1,5 +1,5 @@
 {
-  "name": "Unraid_Drive_Visualizer",
+  "name": "unraid-drive-visualizer",
   "private": true,
   "version": "0.0.0",
   "type": "module",
