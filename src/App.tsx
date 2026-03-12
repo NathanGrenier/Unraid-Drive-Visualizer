@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Drive } from "./types";
 import { useStorageStats } from "./hooks/useStorageStats";
 
@@ -11,15 +11,38 @@ import { StatCard } from "./components/StatCard";
 import { DriveVisualizer } from "./components/DriveVisualizer";
 
 const generateId = () => Math.random().toString(36).substring(7);
+const STORAGE_KEY = "unraid_planner_config";
+
+const loadSavedConfig = () => {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      return JSON.parse(saved);
+    }
+  } catch (error) {
+    console.error("Failed to parse config from local storage:", error);
+  }
+  return null;
+};
 
 export default function App() {
-  const [drives, setDrives] = useState<Drive[]>([
-    { id: "1", size: 14 },
-    { id: "2", size: 14 },
-    { id: "3", size: 8 },
-    { id: "4", size: 8 },
-  ]);
-  const [parityCount, setParityCount] = useState<number>(1);
+  const savedConfig = loadSavedConfig();
+
+  const [drives, setDrives] = useState<Drive[]>(
+    savedConfig?.drives ?? [
+      { id: "1", size: 14 },
+      { id: "2", size: 14 },
+      { id: "3", size: 8 },
+      { id: "4", size: 8 },
+    ],
+  );
+  const [parityCount, setParityCount] = useState<number>(
+    savedConfig?.parityCount ?? 1,
+  );
+
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ drives, parityCount }));
+  }, [drives, parityCount]);
 
   const stats = useStorageStats(drives, parityCount);
 
