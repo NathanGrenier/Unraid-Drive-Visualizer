@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Database, Plus, Trash2 } from "lucide-react";
+import { Database, Plus, Trash2, Minus } from "lucide-react";
 import type { Drive } from "../types";
 
 const COMMON_DRIVE_SIZES = [4, 8, 12, 14, 16, 18, 20, 22];
@@ -24,6 +24,16 @@ export function DriveControls({
       onAddDrive(size);
       setCustomSize("");
     }
+  };
+
+  const handleIncrement = () => {
+    const current = parseFloat(customSize) || 0;
+    if (current < 100) setCustomSize(String(current + 1));
+  };
+
+  const handleDecrement = () => {
+    const current = parseFloat(customSize) || 0;
+    if (current > 1) setCustomSize(String(current - 1));
   };
 
   return (
@@ -65,16 +75,35 @@ export function DriveControls({
             Custom Size (TB)
           </label>
           <form onSubmit={handleCustomAdd} className="flex gap-2">
-            <input
-              type="number"
-              step="1"
-              min="1"
-              max="100"
-              value={customSize}
-              onChange={(e) => setCustomSize(e.target.value)}
-              placeholder="e.g. 4"
-              className="flex-1 bg-unraid-dark border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-unraid-orange focus:ring-1 focus:ring-unraid-orange transition-all"
-            />
+            <div className="flex-1 flex items-center bg-unraid-dark border border-white/10 rounded-lg focus-within:border-unraid-orange focus-within:ring-1 focus-within:ring-unraid-orange transition-all">
+              <button
+                type="button"
+                onClick={handleDecrement}
+                className="p-3 text-gray-400 hover:text-white hover:bg-white/5 transition-colors rounded-l-lg"
+              >
+                <Minus className="w-4 h-4" />
+              </button>
+
+              <input
+                type="number"
+                step="1"
+                min="1"
+                max="100"
+                value={customSize}
+                onChange={(e) => setCustomSize(e.target.value)}
+                placeholder="e.g. 4"
+                className="w-full bg-transparent text-center text-white focus:outline-none py-2 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+              />
+
+              <button
+                type="button"
+                onClick={handleIncrement}
+                className="p-3 text-gray-400 hover:text-white hover:bg-white/5 transition-colors rounded-r-lg"
+              >
+                <Plus className="w-4 h-4" />
+              </button>
+            </div>
+
             <button
               type="submit"
               disabled={!customSize}
