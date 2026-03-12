@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+
+body {
+  background-color: var(--color-unraid-darker);
+  color: var(--color-unraid-light);
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-unraid-orange: #f15a24;
+  --color-unraid-orange-hover: #d94d1c;
+  --color-unraid-dark: #111827;
+  --color-unraid-darker: #030712;
+  --color-unraid-gray: #1f2937;
+  --color-unraid-light: #f3f4f6;
+}
+
+@layer base {
+  button {
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+}
+
+/* Striped pattern for unused space */
+.bg-striped-unused {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.05) 10px,
+    rgba(0, 0, 0, 0.2) 10px,
+    rgba(0, 0, 0, 0.2) 20px
+  );
+}
