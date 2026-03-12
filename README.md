@@ -1,6 +1,6 @@
 # Unraid Storage Planner
 
-A simple, interactive front-end web application to visualize and plan your Unraid server storage array. 
+A simple, interactive front-end web application to visualize and plan your Unraid server storage array.
 
 [![CI](https://github.com/NathanGrenier/Unraid-Drive-Visualizer/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/NathanGrenier/Unraid-Drive-Visualizer/actions/workflows/ci.yaml)
 
@@ -24,21 +24,29 @@ A simple, interactive front-end web application to visualize and plan your Unrai
 ## Getting Started
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/your-username/Unraid-Drive-Visualizer.git
 ```
+
 2. Navigate to the project directory:
+
 ```bash
 cd Unraid-Drive-Visualizer
 ```
+
 3. Install dependencies:
+
 ```bash
 npm install
 ```
+
 4. Start the development serve:
+
 ```bash
 npm run dev
 ```
 
 ## Disclaimer
+
 This project is not affiliated with, endorsed by, or sponsored by Unraid or Lime Technology, Inc. It is a community-created tool for educational and planning purposes.

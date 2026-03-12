@@ -12,7 +12,7 @@
     "lint": "eslint .",
     "typecheck": "tsc -b",
     "format:check": "prettier --check .",
-    "format:write": "prettier --write .",
+    "format": "prettier --write .",
     "validate": "npm run typecheck && npm run lint",
     "preview": "vite preview"
   },
