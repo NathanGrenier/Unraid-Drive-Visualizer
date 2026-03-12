@@ -59,7 +59,6 @@ export default function App() {
   return (
     <div className="min-h-screen bg-unraid-darker text-unraid-light font-sans selection:bg-unraid-orange selection:text-white flex flex-col">
       <Header />
-
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Configuration Sidebar */}
@@ -78,7 +77,7 @@ export default function App() {
 
           {/* Visualization & Stats */}
           <div className="lg:col-span-8 space-y-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pb-8">
               <StatCard
                 title="Total Raw Space"
                 value={stats.totalSpace}
@@ -115,7 +114,6 @@ export default function App() {
           </div>
         </div>
       </main>
-
       <Footer />
     </div>
   );
